@@ -31,7 +31,7 @@ module CarrierWave
       private
 
         def file
-          @file ||= StringIO.new(Kernel.open(@uri.to_s))
+          @file ||= StringIO.new(Kernel.open(@uri.to_s).read)
         end
 
         def method_missing(*args, &block)
